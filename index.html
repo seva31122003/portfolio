@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body >
+<div  id="app">
+    
+    <transition mode="out-in" name="fadeDialog"> 
+
+        <div class="dialog1" v-show="dialogBackgroundActive">
+
+            <!-- ContactForm  -->
+            <div class="dialog__contact" v-show="dialogContactFormactive" >
+                <div class="dialog__contact__form">
+                    <div class="contact__form">
+                        <div class="contact__title">LET'S TALK!</div> 
+                        <div class="contact__subtitle">CALL ME OR SEND ME A REQUEST</div> 
+    
+                        <div class="contacn__collection">
+                            <div class="contact__number">
+                                <img src="/img/telephone-call.png" alt="">
+                                <p>(200) 100 3000</p>
+                            </div>
+    
+                            <div class="contact__number">
+                                <img src="/img/email.png" alt="">
+                                <p>designer@ui43.com</p>
+                            </div>
+                        </div>
+    
+                        <div class="dialog__contact__form">
+                            <div class="dialog__contact__form__email">
+                                <h1>Adress e-mail</h1>
+                                <input action="/email" placeholder="Adress e-mail"></input>
+                            </div>
+    
+                            <div class="dialog__contact__form__request">
+                                <h1>Requst</h1>
+                                <textarea action="/request" placeholder="Type your request..."></textarea>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <button class="btn btn__contact"  >send</button>
+                </div>
+                <div class="dialog__contact__cart" >
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24514.501500652226!2d30.320611403211565!3d59.95288190072388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310b32cbe2e9%3A0x74e032aa0505dfc!2z0JPQvtGB0YPQtNCw0YDRgdGC0LLQtdC90L3Ri9C5INCt0YDQvNC40YLQsNC2!5e0!3m2!1sru!2sru!4v1657109558629!5m2!1sru!2sru" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div @click="dialigClose" class="dialog__close"></div>
+                </div>
+            </div>
+
+            <!-- Resume  -->
+
+            <div class="dialogResume" v-show="dialogResumeActive">
+                <div @click="dialigClose" class="dialog__close"></div>
+
+                <div class="resume">
+                    <div class="resume__title">Resume</div>
+
+                    <div class="resume__skils">
+                        <div class="skils__item skils__item--left">
+                            <div class="skils__title">EXPERIENCE</div>
+                            <div class="skils__block">
+                                <div class="skils__block__date">2017 - Present</div>
+                                <div class="skils__block__title">Freelancer</div>
+                                <div class="skils__block__subtitle">Art Director</div>
+                                <div class="skils__block__txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis felis non tempor ullamcorper. Pellentesque cursus lectus a pulvinar dapibus. Nullam blandit aliquam ligula ut condimentum.</div>
+                            </div>
+
+                            <div class="skils__block">
+                                <div class="skils__block__date">2016 - 2017</div>
+                                <div class="skils__block__title">The Best Agency</div>
+                                <div class="skils__block__subtitle">Art Director</div>
+                                <div class="skils__block__txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis felis non tempor ullamcorper. Pellentesque cursus lectus a pulvinar dapibus. Nullam blandit aliquam ligula ut condimentum.</div>
+                            </div>
+
+                            <div class="skils__block">
+                                <div class="skils__block__date">2014 - 2016</div>
+                                <div class="skils__block__title">Better Agency</div>
+                                <div class="skils__block__subtitle">Senior UI/UX Designer</div>
+                                <div class="skils__block__txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis felis non tempor ullamcorper. Pellentesque cursus lectus a pulvinar dapibus. Nullam blandit aliquam ligula ut condimentum.</div>
+                            </div>
+
+                            <div class="skils__block">
+                                <div class="skils__block__date">2012 - 2014</div>
+                                <div class="skils__block__title">Good Agency</div>
+                                <div class="skils__block__subtitle">UI/UX Designer</div>
+                                <div class="skils__block__txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis felis non tempor ullamcorper. Pellentesque cursus lectus a pulvinar dapibus. Nullam blandit aliquam ligula ut condimentum.</div>
+                            </div>
+
+                        </div> 
+
+                        <div class="skils__item skils__item--right">
+                            <div class="skils__title">EDUCATION</div>
+
+                            <div class="skils__block skils__block--rigth">
+                                <div class="skils__block__date">2005 - 2010</div>
+                                <div class="skils__block__title">UI/UX Design</div>
+                                <div class="skils__block__subtitle">LA University, USA</div>
+                            </div>
+                            <div class="skils__block skils__block--rigth" style="margin-bottom: 1rem;">
+                                <div class="skils__block__date">2002 - 2005</div>
+                                <div class="skils__block__title">UI/UX Design</div>
+                                <div class="skils__block__subtitle">LA Collage of Art, USA</div>
+                            </div>
+                            
+                            <div class="skils__bar">
+                                <div class="skils__title">skills</div>
+                                <div class="skils__bar__item">
+                                    <div class="skils__bar__name">UI/UX Design</div>
+                                    <div class="skils__bar__container">
+                                        <div class="skils__bar__content" style="width: 87%;"></div>
+                                    </div>                                   
+                                </div>
+                                <div class="skils__bar__item">
+                                    <div class="skils__bar__name">Illustrator</div>
+                                    <div class="skils__bar__container">
+                                        <div class="skils__bar__content" style="width: 96%;"></div>
+                                    </div>                                   
+                                </div>
+
+                                <div class="skils__bar__item">
+                                    <div class="skils__bar__name">Photoshop</div>
+                                    <div class="skils__bar__container">
+                                        <div class="skils__bar__content" style="width: 70%;"></div>
+                                    </div>                                   
+                                </div>
+
+                                <div class="skils__bar__item" >
+                                    <div class="skils__bar__name">Sketch</div>
+                                    <div class="skils__bar__container">
+                                        <div class="skils__bar__content" style="width: 60%;"></div>
+                                    </div>                                   
+                                </div >
+
+                            </div>
+
+                            <div class="skils__title" style="margin-top: 1rem;">awards</div>
+
+                            <div class="awards">
+                                <div class="awards__item">
+                                    <div class="awards__date">2016</div>
+                                    <div class="awards__content">
+                                        <div class="awards__title">THE BEST APP INTERFACE</div>
+                                        <div class="awards__subtitle">UI/UX Magazine</div>
+                                        <div class="awards__txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis felis non tempor ullamcorper. Pellentesque cursus lectus a pulvinar dapibus.</div>
+                                    </div>
+                                </div>
+
+                                <div class="awards__item">
+                                    <div class="awards__date">2016</div>
+                                    <div class="awards__content">
+                                        <div class="awards__title">THE BEST WEBSITE</div>
+                                        <div class="awards__subtitle">UI/UX Magazine</div>
+                                        <div class="awards__txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis felis non tempor ullamcorper. Pellentesque cursus lectus a pulvinar dapibus.</div>
+                                    </div>
+                                </div>
+                                   
+                            </div>
+                        </div>
+
+                        
+
+
+                    </div>
+                
+                </div>
+                
+            </div>
+
+        </div>
+    </transition>
+
+    
+
+<header class="header" id="header">
+    <div class="container container--header">
+        <div class="header__inner">
+
+            <div class="user">
+               <div class="user__avatar" >
+                    <img src="./img/avater.jpg" alt="" >
+               </div> 
+               <div class="user_content">
+                <div class="user_name">Vsevolod <br> Vorobev</div>
+                <div class="user_prof"> UI &amp; UX Designer</div>
+               </div>
+            </div>
+
+            <nav class="nav">
+                <a class="nav__link" href="" data-scroll="#work">work</a>
+                <a class="nav__link" href="" data-scroll="#about">about me</a>
+                <a class="nav__link" href="" data-scroll="#blog">blog</a>
+                <a class="nav__link " href="" @click="DialogButton">contact</a>
+                <a class="nav__link nav__link--btn" href="#">here me</a>
+            </nav>
+
+
+        </div>
+    </div>
+</header>
+
+<section class="intro">
+    <div class="container">
+
+        <div class="intro__inner">
+            <div class="intro__content">
+                <h2 class="intro__subtitle">Hello, i'm</h2>
+                <h1 class="intro__title">Vsevolod Vorobev</h1>
+                <p class="intro__txt">UI &amp; UX Designer</p>
+
+                <div class="intro__soc">
+                    <a href="#" class="soc__item">
+                        <img src="./img/intro/pinterest (1).png" alt="">
+                    </a>
+                    <a href="#" class="soc__item">
+                        <img src="./img/intro/globe.png" alt="">
+                    </a>
+                    <a href="#" class="soc__item">
+                        <img src="./img/intro/in.png" alt="">
+                    </a>
+                    <a href="#" class="soc__item">
+                        <img src="./img/intro/facebook-app-symbol.png" alt="">
+                    </a>
+                    <a href="#" class="soc__item">
+                        <img src="./img/intro/instagram (1).png" alt="">
+                    </a>
+                    <a href="#" class="soc__item">
+                        <img src="./img/intro/twitter (1).png" alt="">
+                    </a>
+                </div>
+
+                <div class="intro__contact">
+                    <a class="btn" href="">hire me</a>
+                    <button class="btn" href="" @click="dialogResumeIsActive">see my resume</button>                   
+                </div>
+            </div>
+            <img class="intro__photo " src="./img/intro/photo.png" alt="">
+        </div>
+    </div> <!-- CONTAINER-->
+</section> <!-- INTRO-->
+
+<!-- works  -->
+<div class="works" id="work" >
+    <div class="container">
+        <div class="works__nav" >
+            <a href="#" 
+               class="works__nav__link" 
+               v-for="(link, index) in nav" 
+               :key="index"
+               @click="nav_link"
+               >
+                          
+               {{link.text}}</a>
+        </div>
+            <transition-group name="fade" tag="div" class="portfolio">              
+            <div class="portfolio__col " v-for="(work, index) in works" :key="index" 
+                 v-if="((index < kolvo) && (work.category == text_nav)) || ((text_nav == 'All') && (index < kolvo))" 
+                >
+                    <div class="work ">
+                    <img class="work__img" :src="work.url" alt="">
+                    <div class="work__content">
+                     <div class="work__cat">{{work.category}}</div>
+                     <div class="work__title">{{work.title}}
+                         <div class="work__date" > {{work.date}} </div>
+                     </div>                    
+                 </div>
+                </div>
+            </div>
+        </transition-group>
+        <div class="text-center" >
+            <a @click="limit" v-show="buttonShow" class="btn btn--small">{{buttonText}}</a>        
+        </div>
+
+         
+    </div> <!-- CONTAINER-->
+</div> <!-- WORK-->
+
+<!-- About-->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about__inner">
+            <div class="about__img">
+                <img class="img" src="./img/about/designer_photo.png" alt="">
+            </div>  
+            
+            <div class="about__content">
+                <h3 class="about__title"> about me</h3>
+                <h2 class="about__bigtitle"> who am i</h2>
+                <div class="about__text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, minima. Aliquam eos atque eius recusandae rerum sunt. Eum esse, exercitationem nemo laborum unde aliquam. Est cupiditate sit reprehenderit quos adipisci.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, minima. Aliquam eos atque eius recusandae rerum sunt. Eum esse, exercitationem nemo laborum unde aliquam. Est cupiditate sit reprehenderit quos adipisci.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, minima. Aliquam eos atque eius recusandae rerum sunt. Eum esse, exercitationem nemo laborum unde aliquam. Est cupiditate sit reprehenderit quos adipisci.</p>
+                </div>
+                <a class="btn" href="">hire me</a>
+                <button class="btn" href="" @click="dialogResumeIsActive">see my resume</button>  
+            </div> <!--about__content-->
+            
+
+        </div><!--about__inner-->
+
+
+    </div> <!--container-->
+</section>
+
+
+<!--reviews-->
+<div class="reviews">
+    <div class="container">
+        
+        <div class="reviews__item">
+            <div class="reviews__txt">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, fuga eligendi. Asperiores ab sequi, dolores provident quas molestias debitis voluptas repellendus soluta alias dolor earum doloribus harum commodi numquam perspiciatis! </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, fuga eligendi. Asperiores ab sequi, dolores provident quas molestias debitis voluptas repellendus soluta alias dolor earum doloribus harum commodi numquam perspiciatis!</p>
+            </div>
+
+            <div class="reviews__author">
+                <img src="./img/reviews/1.jpg" alt="">
+                <div class="reviews__name">Edward M.B.</div>
+                <div class="reviews_company">Marketing House</div>
+                <div class="reviews__rating">
+                    <img src="./img/reviews/star.png" alt="">
+                    <img src="./img/reviews/star.png" alt="">
+                    <img src="./img/reviews/star.png" alt="">
+                    <img src="./img/reviews/star.png" alt="">
+                    <img src="./img/reviews/star-half.png" alt="">
+                </div>
+            </div>
+        </div><!--reviews__item-->
+    </div>
+</div>
+
+
+<!-- News -->
+
+<section class="news" id="blog">
+    <div class="container">
+        <div class="news__header">
+            <div class="news__title">Read me</div>
+            <div class="news__txt">Sometimes i write something smart</div>
+        </div>
+        <div class="articles">   
+            <transition-group class="articles" name="slides" tag="p">                  
+                    <div v-for="(new1, index) in news" 
+                         :key="index" class="articles__col" 
+                         v-if="(index >= start_news) && (index <= end_news)">
+
+                        <div class="articles__item" >                  
+                            <div class="articles__header">
+                                <time class="articles__date">
+                                {{ new1.dateNum }}  <br> {{new1.dateMouth}}
+                                </time>
+                                <a href="#">
+                                    <img :src="new1.url" alt="" class="articles__img">
+                                </a>                       
+                            </div>
+                            <div class="articles__content">
+                                <h3 class="articles__title">  <a href="">{{ new1.title }}</a></h3>
+                                <div class="articles__cat"> {{ new1.category }} + {{index}} </div>
+                                <div class="articles__txt">
+                                <p> {{ new1.text }} </p> 
+                                </div>
+                            </div>
+                        <a href="#" class="btn btn--small" style="padding: 0.7rem 2rem;">read more</a>
+                        </div>
+                    </div>   
+
+                </transition-group> 
+        <a href="#" class="nav__arrow nav__arrow--left" @click="newsNavBack"> <img src="./img/news/arrow.png" alt=""></a>
+        <a href="#" class="nav__arrow nav__arrow--right" @click="newsNavNext"> <img src="./img/news/arrow.png" alt=""></a>
+        
+        </div>
+    </div>
+</section>
+
+
+<footer class="footer">  
+    <div class="container">
+        <div class="footer__collection">
+            <div class="footer__contact">
+                <div class="footer__txt">© 2018 UI43 - Free Templates</div>
+                <div class="footer__soc" v-for="(soc,index) in socs" :key="index">
+                    <div class="footer__soc__item">
+                        <a href=""> 
+                            <img class="soc__img" :src="soc.url" alt="">
+                        </a>
+                    </div>                                     
+                </div>
+            </div>
+
+            <div class="footer__nav">
+                    <a href="" data-scroll="#work">Work</a>
+                    <a href="" data-scroll="#about">About Me</a>
+                    <a href="" data-scroll="#blog">Blog</a>
+                    <a href="" @click="DialogButton">Contact</a>
+                    <a href="">here me</a>
+
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="main.js"></script>
+<script>
+    var app = new Vue({
+      el: '#app',
+      data() {
+        return{
+        isActive: true, 
+        dialogBackgroundActive: false,
+        dialogContactFormactive: false,
+        dialogResumeActive: false,
+        buttonText:'Load more work',
+        buttonShow:true,
+        nav:[
+            {text:'All'},
+            {text:'App'},
+            {text:'Websites'},
+            {text:'Interaction'},
+        ],
+        socs:[
+            {id:1, url:'./img/intro/facebook-app-symbol.png'},
+            {id:1, url:'./img/intro/globe.png'},
+            {id:1, url:'./img/intro/in.png'},
+            {id:1, url:'./img/intro/instagram (1).png'},
+            {id:1, url:'./img/intro/pinterest (1).png'},
+            {id:1, url:'./img/intro/twitter (1).png'},
+        ],
+        start_news: 0,
+        end_news: 2,
+        news: [
+            {id:1, dateNum:'10', dateMouth:'June', title:'TEN THE BEST APP IN 2017 1', category:'category',
+            text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.', url:'./img/news/1.jpg'},
+
+            {id:2, dateNum:'15', dateMouth:'June', title:'WEBSITE INSPIRATION 2', category:'category',
+            text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.', url:'./img/news/2.jpg'},
+
+            {id:3, dateNum:'20', dateMouth:'June', title:'CHANGES IN SOCIAL MEDIA 3', category:'category',
+            text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.', url:'./img/news/3.jpg'},
+
+            {id:4, dateNum:'20', dateMouth:'June', title:'CHANGES IN SOCIAL MEDIA 4', category:'category',
+            text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.', url:'./img/news/4.jpg'},
+
+            {id:5, dateNum:'20', dateMouth:'June', title:'CHANGES IN SOCIAL MEDIA 5', category:'category',
+            text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.', url:'./img/news/5.jpg'},
+
+            {id:6, dateNum:'20', dateMouth:'June', title:'CHANGES IN SOCIAL MEDIA 6', category:'category',
+            text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.', url:'./img/news/6.jpg'},
+        ],
+
+        kolvo: 6,
+        text_nav:'All',
+        total: 12,
+
+        works: [
+                {id:1, title: 'MoGo', category: 'Websites',date:'2022',              url:'./img/work/1.jpg'},
+                {id:2, title: 'PROJECT TITLE', category: 'Websites', date:'2022',    url:'./img/work/2.jpg'},
+                {id:3, title: 'PROJECT TITLE', category: 'Interaction', date:'2022', url:'./img/work/3.jpg'},
+                {id:4, title: 'PROJECT TITLE', category: 'Interaction', date:'2022', url:'./img/work/4.jpg'},
+                {id:5, title: 'PROJECT TITLE', category: 'Interaction', date:'2022', url:'./img/work/5.jpg'},
+                {id:6, title: 'PROJECT TITLE', category: 'Websites', date:'2022',    url:'./img/work/6.jpg'},
+                {id:7, title: 'PROJECT TITLE', category: 'App', date:'2022',         url:'./img/work/7.jpg'},
+                {id:8, title: 'PROJECT TITLE', category: 'App', date:'2022',         url:'./img/work/8.jpg'},
+                {id:9, title: 'PROJECT TITLE', category: 'App', date:'2022',         url:'./img/work/9.jpeg'},
+                {id:10, title: 'PROJECT TITLE', category: 'Interaction', date:'2022', url:'./img/work/10.jpeg'},
+                {id:11, title: 'PROJECT TITLE', category: 'Interaction', date:'2022', url:'./img/work/11.jpg'},
+                {id:12, title: 'PROJECT TITLE', category: 'Websites',date:'2022', url:'./img/work/12.jpeg'},
+                
+
+            ],
+        }
+        },
+
+
+
+        methods: {
+            limit(event){
+                event.preventDefault();
+                this.kolvo +=3;
+
+                if (this.kolvo == this.total)this.buttonText = 'Close work'; 
+                if (this.kolvo > this.total){this.kolvo = 6; this.buttonText = 'Load More work'; };
+            },
+
+            nav_link(event){
+                event.preventDefault();
+                this.text_nav = event.target.innerText; 
+                this.kolvo=this.total;
+                
+                if (this.text_nav == 'All') {this.buttonText = 'Close work'; this.kolvo= (this.total+1); this.buttonShow = true;} else this.buttonShow = false;
+            },
+
+            newsNavBack(event){
+                event.preventDefault();
+                if(this.start_news != 0){
+                    setTimeout(()=>{
+                    this.start_news -=1;
+                },620);
+                    this.end_news -= 1;
+                }
+            },
+
+            newsNavNext(event){
+                event.preventDefault();
+               if(this.start_news != 3 && this.end_news !=5){
+                this.start_news +=1;
+                
+                setTimeout(()=>{
+                   this.end_news +=1;
+                },620);
+
+               }             
+            },
+
+            DialogButton(event){
+                event.preventDefault();
+                this.dialogBackgroundActive = true;
+                this.dialogContactFormactive = true;
+                
+            },
+
+            dialigClose(event){
+                event.preventDefault();
+                this.dialogBackgroundActive = false; 
+                this.dialogContactFormactive = false;  
+                
+                this.dialogResumeActive = false;
+            },
+
+            dialogResumeIsActive(event){
+                event.preventDefault();
+                this.dialogResumeActive = true;
+                this.dialogBackgroundActive = true;
+            }
+
+        },      
+    });
+  </script>     
+
+</body>
+
+</html>
